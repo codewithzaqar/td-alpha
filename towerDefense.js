@@ -21,6 +21,11 @@ function gameLoop() {
 // Update Game State
 function update() {
     // Placeholder for update logic
+
+    // Example addition: Reduce money over time
+    if (gameState.money > 0) {
+        gameState.money -= 0.1 // Slowly decrease money
+    }
 }
 
 function draw() {
@@ -31,6 +36,9 @@ function draw() {
     ctx.font = '20px Arial';
     ctx.fillStyle = 'black'
     ctx.fillText('Tower Defense v0.1', 10, 30)
+
+    // Display current money
+    ctx.fillText(`Money: ${Math.floor(gameState.money)}`, 10, 60)
 }
 
 // Start the Game Loop
